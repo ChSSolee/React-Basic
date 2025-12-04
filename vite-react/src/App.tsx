@@ -2,17 +2,19 @@
 // import { Main } from "./components/Main";
 // import { Footer } from "./components/Footer";
 
+import { useReducer } from 'react';
+import { counterReducer } from './reducer/counterReducer';
 
 export default function App() {
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-      }}
-    >
-      <input type='text' name='email' />
-      <input type='password' />
-      <button type='submit'>전송</button>
-    </form>
-  )
+    const [count, countDispatch] = useReducer(counterReducer, 0);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+
+            <button onClick={() => countDispatch({ type: 'DECREMENT' })}>감소</button>
+            <button onClick={() => countDispatch({ type: 'INCREMENT' })}>증가</button>
+            <button onClick={() => countDispatch({ type: 'RESET' })}>초기화</button>
+        </div>
+    );
 }
