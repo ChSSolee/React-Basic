@@ -1,17 +1,18 @@
 // import { Header } from "./components/Header";
 // import { Main } from "./components/Main";
 // import { Footer } from "./components/Footer";
-import { User } from './components/User';
+
 
 export default function App() {
-    const userObj = {
-        name: '철수',
-        age: 20
-    };
-
-    const clickHandler = () => {
-        console.log('clicked');
-    };
-
-    return <User {...userObj} clickHandler={clickHandler} />;
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
+      <input type='text' name='email' />
+      <input type='password' />
+      <button type='submit'>전송</button>
+    </form>
+  )
 }
