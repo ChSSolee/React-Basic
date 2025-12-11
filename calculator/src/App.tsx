@@ -13,7 +13,19 @@ export default function App() {
   const handleNumberClick = (
     event: React.MouseEvent<HTMLInputElement, MouseEvent>
   ) => {
-    console.log(event.currentTarget.value);
+    const value = event.currentTarget.value;
+    if (state.isNewNumber) {
+      setState({
+        ...state,
+        currentNumber:value,
+        isNewNumber: false,
+      });
+    } else {
+      setState({
+        ...state,
+        currentNumber: state.currentNumber + value,
+      })
+    }
   }
 
   // 연산 기호 버튼 클릭 처리

@@ -7489,18 +7489,17 @@ a.anchor-link {
 <li>컴포넌트에서 데이터를 정의하는 가장 간단한 방법은 JS의 <code>let</code>, <code>const</code>를 사용해 변수를 선언</li>
 </ul>
 <br/>
-<pre><code class="language-tsx">tsx
-export default function App() {
-    let name = '철수';
-    const age = 20;
-    return (
-        &lt;div&gt;
-            &lt;p&gt;{name}&lt;/p&gt;
-            &lt;p&gt;{age}&lt;/p&gt;
-        &lt;/div&gt;
-    )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'철수'</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><p>하지만 이런 방법은 <code>let</code>, <code>const</code>로 선언한 데이터가 변경되더라도 React가 해당 변화를 감지하지 못하기 때문</p>
@@ -7543,9 +7542,8 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [state, setState] = useState&lt;Type&gt;(initialState);
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">setState</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="nx">Type</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">initialState</span><span class="p">);</span>
+</pre></div>
 <br/>
 <h4 id="%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-(Generic)">제네릭 타입 (Generic)<a class="anchor-link" href="#%EC%A0%9C%EB%84%A4%EB%A6%AD-%ED%83%80%EC%9E%85-(Generic)">¶</a></h4><ul>
 <li><p><strong>타입스크립트에서는 특정 타입에 고정되지 않고, 다양한 타입에서 재사용할 수 있는 기능인 제네릭을 제공</strong></p>
@@ -7558,38 +7556,34 @@ const [state, setState] = useState&lt;Type&gt;(initialState);
 <ul>
 <li>제네릭 미사용시 : 숫자, 문자열 처리 함수 별도 생성</li>
 </ul>
-<pre><code class="language-tsx">tsx
-function identityNumber(value: number) : number {
-    return value;
-}
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">identityNumber</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
 
-function identityString(value: string) : string {
-    return value;
-}
-</code></pre>
+<span class="kd">function</span><span class="w"> </span><span class="nx">identityString</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong>제네릭</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-function identity&lt;T&gt;(value: T) {
-    return value;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">identity</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%9C-%ED%83%80%EC%9E%85-%EC%A7%80%EC%A0%95">제네릭을 사용한 타입 지정<a class="anchor-link" href="#%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%9D%84-%EC%82%AC%EC%9A%A9%ED%95%9C-%ED%83%80%EC%9E%85-%EC%A7%80%EC%A0%95">¶</a></h4><ul>
 <li>초깃값이 없으면 <code>value</code>의 타입은 <code>undefined</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [value, setValue] = useState&lt;number | undefined&gt;();
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="nx">setValue</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">undefined</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
 <br/>
 <ul>
 <li>초깃값은 <code>null</code>이지만, 이후 문자열 값을 상태로 저장</li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [data, setData] = useState&lt;string | null&gt;(null);
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">setData</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
 <br/>
 <h4 id="%EC%83%81%ED%83%9C-%EB%B3%80%EC%88%98">상태 변수<a class="anchor-link" href="#%EC%83%81%ED%83%9C-%EB%B3%80%EC%88%98">¶</a></h4><ul>
 <li><p><strong>React에서 컴포넌트의 상태를 관리하기 위해 사용하는 변수</strong></p>
@@ -7601,9 +7595,8 @@ const [data, setData] = useState&lt;string | null&gt;(null);
 <p>$\rightarrow$ <strong><code>state</code>는 상태를 저장하는 변수, 상태 값은 현재 가지고 있는 값</strong></p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [state, setState] = useState(10); // 초깃값 10
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">setState</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span><span class="w"> </span><span class="c1">// 초깃값 10</span>
+</pre></div>
 <br/>
 <h4 id="%EC%83%81%ED%83%9C-%EB%B3%80%EA%B2%BD-%ED%95%A8%EC%88%98">상태 변경 함수<a class="anchor-link" href="#%EC%83%81%ED%83%9C-%EB%B3%80%EA%B2%BD-%ED%95%A8%EC%88%98">¶</a></h4><ul>
 <li><strong><code>useState</code>로 선언한 상태 변수의 값을 변경할 때는 반드시 </strong>상태 변경 함수<strong>를 사용해야 함</strong></li>
@@ -7612,20 +7605,18 @@ const [state, setState] = useState(10); // 초깃값 10
 <h4 id="%EC%83%81%ED%83%9C-%EA%B0%92%EC%9D%84-%EC%A7%81%EC%A0%91-%EC%A0%84%EB%8B%AC">상태 값을 직접 전달<a class="anchor-link" href="#%EC%83%81%ED%83%9C-%EA%B0%92%EC%9D%84-%EC%A7%81%EC%A0%91-%EC%A0%84%EB%8B%AC">¶</a></h4><ul>
 <li>초깃 값 : 0 $\rightarrow$ 값을 1로 변경</li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [count, setCount] = useState&lt;number&gt;(0);
-setCount(1);
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">setCount</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EC%A0%84-%EC%83%81%ED%83%9C-%EA%B0%92%EC%9D%84-%EC%B0%B8%EC%A1%B0">이전 상태 값을 참조<a class="anchor-link" href="#%EC%9D%B4%EC%A0%84-%EC%83%81%ED%83%9C-%EA%B0%92%EC%9D%84-%EC%B0%B8%EC%A1%B0">¶</a></h4><ul>
 <li>상태 값을 1 증가</li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [count, setCount] = useState(0);
-const increment = () =&gt; {
-    setCount((count) =&gt; count + 1);
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setCount</span><span class="p">((</span><span class="nx">count</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="useState-%ED%9B%85-%EC%A0%81%EC%9A%A9"><code>useState</code> 훅 적용<a class="anchor-link" href="#useState-%ED%9B%85-%EC%A0%81%EC%9A%A9">¶</a></h3><br/>
 <ul>
@@ -7635,52 +7626,49 @@ const increment = () =&gt; {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { useState } from 'react';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
 
-export default function App() {
-    const [count, setCount] = useState(0);
-    const clickHandler = () =&gt; setCount(count =&gt; count +1);
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="mf">1</span><span class="p">);</span>
 
-    return (
-        &lt;div&gt;
-            &lt;h1&gt;Count: {count}&lt;/h1&gt;
-            &lt;button onClick={clickHandler}&gt;증가&lt;/button&gt;
-        &lt;/div&gt;
-    );
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">증가</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="useState-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9"><code>useState</code> 훅 복수 사용<a class="anchor-link" href="#useState-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9">¶</a></h3><ul>
 <li><strong>컴포넌트 내부에서 여러 개의 상태 값이 필요한 경우 $\rightarrow$ 여러 상태 값을 하나의 객체로 묶어 관리</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { useState } from 'react';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
 
-export default function App() {
-    const [formState, setFormState] = useState({
-        name: '',
-        age: 0,
-        gender: '',
-    });
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">formState</span><span class="p">,</span><span class="w"> </span><span class="nx">setFormState</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">gender</span><span class="o">:</span><span class="w"> </span><span class="s1">''</span><span class="p">,</span>
+<span class="w">    </span><span class="p">});</span>
 
-    // ...
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="useState%ED%9B%85-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD"><code>useState</code>훅 사용 시 주의사항<a class="anchor-link" href="#useState%ED%9B%85-%EC%82%AC%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD">¶</a></h3><br/>
 <h4 id="%EC%9D%B4%ED%9B%84-%ED%83%80%EC%9E%85%EC%9D%84-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%A0%9C%EB%84%A4%EB%A6%AD-%EB%AA%85%EC%8B%9C">이후 타입을 고려한 제네릭 명시<a class="anchor-link" href="#%EC%9D%B4%ED%9B%84-%ED%83%80%EC%9E%85%EC%9D%84-%EA%B3%A0%EB%A0%A4%ED%95%9C-%EC%A0%9C%EB%84%A4%EB%A6%AD-%EB%AA%85%EC%8B%9C">¶</a></h4><ul>
 <li><strong>초깃값이 <code>null</code>, <code>undefined</code>, <code>[]</code> 등 불분명한 타입일 경우 제네릭 타입을 명시하는 것이 바람직</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-    const [name, setName] = useState&lt;string | null&gt;(null);
-    const [age, setAge] = useState&lt;number | null&gt;(null);
-    const [gender, setGender] = useState&lt;string | null&gt;(null);
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">setName</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">setAge</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">gender</span><span class="p">,</span><span class="w"> </span><span class="nx">setGender</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="o">&lt;</span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 
-    // ...
-}
-</code></pre>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%9B%85%EC%9D%98-%ED%98%B8%EC%B6%9C-%EC%9C%84%EC%B9%98">리액트 훅의 호출 위치<a class="anchor-link" href="#%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%9B%85%EC%9D%98-%ED%98%B8%EC%B6%9C-%EC%9C%84%EC%B9%98">¶</a></h4><ul>
 <li><p><a href="https://ko.react.dev/reference/rules/rules-of-hooks">https://ko.react.dev/reference/rules/rules-of-hooks</a></p>
@@ -7729,9 +7717,8 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-const [state, dispatch] = useReducer&lt;Type&gt;(reducer, initialState);
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">state</span><span class="p">,</span><span class="w"> </span><span class="nx">dispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="o">&lt;</span><span class="nx">Type</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">reducer</span><span class="p">,</span><span class="w"> </span><span class="nx">initialState</span><span class="p">);</span>
+</pre></div>
 <br/>
 <h4 id="%EC%95%A1%EC%85%98%EA%B3%BC-%EC%95%A1%EC%85%98-%EB%B0%9C%EC%83%9D-%ED%95%A8%EC%88%98">액션과 액션 발생 함수<a class="anchor-link" href="#%EC%95%A1%EC%85%98%EA%B3%BC-%EC%95%A1%EC%85%98-%EB%B0%9C%EC%83%9D-%ED%95%A8%EC%88%98">¶</a></h4><ul>
 <li><strong>액션 : 리듀서 함수에서 어떤 상태 변경을 수행할지 결정하기 위해 참조하는 값</strong><ul>
@@ -7746,27 +7733,25 @@ const [state, dispatch] = useReducer&lt;Type&gt;(reducer, initialState);
 <p>$\rightarrow$ 리듀서 함수는 해당 로직에 따라 상태를 업데이트</p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-dispatch({ type: 'INCREMENT', payload: 5 })
-</code></pre>
+<div class="highlight"><pre><span></span><span class="nx">dispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'INCREMENT'</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="kt">5</span><span class="w"> </span><span class="p">})</span>
+</pre></div>
 <br/>
 <h4 id="%EB%A6%AC%EB%93%80%EC%84%9C-%ED%95%A8%EC%88%98">리듀서 함수<a class="anchor-link" href="#%EB%A6%AC%EB%93%80%EC%84%9C-%ED%95%A8%EC%88%98">¶</a></h4><ul>
 <li><strong>이전 상태와 액션을 매개변수로 받아 새로운 상태를 반환</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-function reducer(state: number, action: { type: string }) {
-    switch(action.type) {
-        case 'INCREMENT':
-            return state + 1;
-        case 'DECREMENT':
-            return state - 1;
-        case 'REST':
-            return 0;
-        default:
-            return state;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">reducer</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kr">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'INCREMENT'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'DECREMENT'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'REST'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">            </span><span class="kt">return</span><span class="w"> </span><span class="nx">state</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong>리듀서 함수를 작성할 때의 기본 형식</strong></li>
@@ -7781,83 +7766,80 @@ function reducer(state: number, action: { type: string }) {
 <h3 id="useReducer-%ED%9B%85-%EC%82%AC%EC%9A%A9"><code>useReducer</code> 훅 사용<a class="anchor-link" href="#useReducer-%ED%9B%85-%EC%82%AC%EC%9A%A9">¶</a></h3><ul>
 <li><code>src/reducer/counterReducer.ts</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function counterReducer(state: number, action: { type: string }) {
-    switch (action.type) {
-        case 'INCREMENT':
-            return state + 1;
-        case 'DECREMENT':
-            return state - 1;
-        case 'RESET':
-            return 0;
-        default:
-            throw new Error(`Unhandled action type: ${action.type}`);
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">counterReducer</span><span class="p">(</span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="nx">action</span><span class="p">.</span><span class="kr">type</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'INCREMENT'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'DECREMENT'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nx">state</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="s1">'RESET'</span><span class="o">:</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">default</span><span class="o">:</span>
+<span class="w">            </span><span class="kt">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Unhandled action type: </span><span class="si">${</span><span class="nx">action</span><span class="p">.</span><span class="kr">type</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { useReducer } from 'react';
-import { counterReducer } from './reducer/counterReducer'
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">counterReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./reducer/counterReducer'</span>
 
-export default function App() {
-    const [count, countDispatch] = useReducer(counterReducer, 0);
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">counterReducer</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
 
-    return (
-        &lt;div&gt;
-            &lt;h1&gt;Count: {count}&lt;/h1&gt;
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
 
-            &lt;button onClick={() =&gt; countDispatch({ type: 'DECREMENT' })}&gt;감소&lt;/button&gt;
-            &lt;button onClick={() =&gt; countDispatch({ type: 'INCREMENT' })}&gt;증가&lt;/button&gt;
-            &lt;button onClick={() =&gt; countDispatch({ type: 'RESET' })}&gt;초기화&lt;/button&gt;
-        &lt;/div&gt;
-    );
-}
-</code></pre>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'DECREMENT'</span><span class="w"> </span><span class="p">})}</span><span class="o">&gt;</span><span class="nx">감소</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'INCREMENT'</span><span class="w"> </span><span class="p">})}</span><span class="o">&gt;</span><span class="nx">증가</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">'RESET'</span><span class="w"> </span><span class="p">})}</span><span class="o">&gt;</span><span class="nx">초기화</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
-<h3 id="useReducer-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9"><code>useReducer</code> 훅 복수 사용<a class="anchor-link" href="#useReducer-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9">¶</a></h3><pre><code class="language-tsx">tsx
-import { useReducer } from "react";
-import { counterReducer } from "./reducer/counterReducer";
-import { cartReducer } from "./reducer/cartReducer";
-import { userReducer } from "./reducer/userReducer";
+<h3 id="useReducer-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9"><code>useReducer</code> 훅 복수 사용<a class="anchor-link" href="#useReducer-%ED%9B%85-%EB%B3%B5%EC%88%98-%EC%82%AC%EC%9A%A9">¶</a></h3><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">counterReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./reducer/counterReducer"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">cartReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./reducer/cartReducer"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">userReducer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./reducer/userReducer"</span><span class="p">;</span>
 
-export default function App() {
-  // 카운터 상태 관리
-  const [count, countDispatch] = useReducer(counterReducer, 0);
-  // 사용자 상태 관리
-  const [user, userDispatch] = useReducer(userReducer, {});
-  // 장바구니 상태 관리
-  const [cart, cartDispatch] = useReducer(cartReducer, []);
-  return (
-    &lt;div&gt;
-      {/* 각 상태를 사용한 UI 구성 */}
-      &lt;h1&gt;Count: {count}&lt;/h1&gt;
-      &lt;button onClick={() =&gt; countDispatch({ type: "INCREMENT" })}&gt;
-        증가{" "}
-      &lt;/button&gt;
-      &lt;h2&gt;User: {user.name}&lt;/h2&gt;
-      &lt;button
-        onClick={() =&gt;
-          userDispatch({ type: "SET_USER", payload: { name: "Alice" } })
-        }
-      &gt;
-        Set User
-      &lt;/button&gt;
-      &lt;h3&gt;Cart Items: {cart.length}&lt;/h3&gt;
-      &lt;button
-        onClick={() =&gt;
-          cartDispatch({ type: "ADD_ITEM", payload: { id: 1, name: "Item 1" } })
-        }
-      &gt;
-        Add Item
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// 카운터 상태 관리</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">counterReducer</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// 사용자 상태 관리</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">userDispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">userReducer</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="w">  </span><span class="c1">// 장바구니 상태 관리</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">cart</span><span class="p">,</span><span class="w"> </span><span class="nx">cartDispatch</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useReducer</span><span class="p">(</span><span class="nx">cartReducer</span><span class="p">,</span><span class="w"> </span><span class="p">[]);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="p">{</span><span class="cm">/* 각 상태를 사용한 UI 구성 */</span><span class="p">}</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">countDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"INCREMENT"</span><span class="w"> </span><span class="p">})}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">증가</span><span class="p">{</span><span class="s2">" "</span><span class="p">}</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">User</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span>
+<span class="w">        </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">          </span><span class="nx">userDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"SET_USER"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Alice"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nb">Set</span><span class="w"> </span><span class="nx">User</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Cart</span><span class="w"> </span><span class="nx">Items</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">cart</span><span class="p">.</span><span class="nx">length</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span>
+<span class="w">        </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">          </span><span class="nx">cartDispatch</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s2">"ADD_ITEM"</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Item 1"</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Add</span><span class="w"> </span><span class="nx">Item</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 <br/>
@@ -7885,40 +7867,38 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { useState } from "react";
-import Count from "./components/Count";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Count</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./components/Count"</span><span class="p">;</span>
 
-export default function App() {
-  const [count, setCount] = useState(0);
-  const increment = () =&gt; setCount((count) =&gt; count + 1);
-  return (
-    &lt;&gt;
-      &lt;Count count={count} increment={increment} /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">((</span><span class="nx">count</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Count</span><span class="w"> </span><span class="nx">count</span><span class="o">=</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="nx">increment</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/Count.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function Count({
-  count,
-  increment,
-}: {
-  count: number;
-  increment: () =&gt; void;
-}) {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;Count: {count}&lt;/h1&gt;
-      &lt;button onClick={increment}&gt;증가&lt;/button&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Count</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">count</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">increment</span><span class="p">,</span>
+<span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">increment</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">증가</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="%EC%83%81%ED%83%9C-%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0-(State-Lifting)">상태 끌어올리기 (State Lifting)<a class="anchor-link" href="#%EC%83%81%ED%83%9C-%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%AC%EA%B8%B0-(State-Lifting)">¶</a></h3><ul>
 <li><p><strong>여러 컴포넌트에서 공유해야 하는 상태를 가장 가까운 공통 부모 컴포넌트로 이동시키는 과정</strong></p>
@@ -7949,56 +7929,53 @@ export default function Count({
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { useState } from "react";
-import CountDisplay from "./components/CountDisplay";
-import CountButtons from "./components/CountButtons";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">CountDisplay</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./components/CountDisplay"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">CountButtons</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./components/CountButtons"</span><span class="p">;</span>
 
-export default function App() {
-  const [count, setCount] = useState(0);
-  const increment = () =&gt; setCount(count + 1);
-  const decrement = () =&gt; setCount(count - 1);
-  const reset = () =&gt; setCount(0);
-  return (
-    &lt;&gt;
-      &lt;CountDisplay count={count} /&gt;
-      &lt;CountButtons increment={increment} decrement={decrement} reset={reset} /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">count</span><span class="p">,</span><span class="w"> </span><span class="nx">setCount</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">increment</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decrement</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="nx">count</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">1</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">reset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setCount</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">CountDisplay</span><span class="w"> </span><span class="nx">count</span><span class="o">=</span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">CountButtons</span><span class="w"> </span><span class="nx">increment</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="w"> </span><span class="nx">decrement</span><span class="o">=</span><span class="p">{</span><span class="nx">decrement</span><span class="p">}</span><span class="w"> </span><span class="nx">reset</span><span class="o">=</span><span class="p">{</span><span class="nx">reset</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/CountDisplay.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function CountDisplay({ count }: { count: number }) {
-  return &lt;h1&gt;Count: {count} &lt;/h1&gt;;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">CountDisplay</span><span class="p">({</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">count</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">count</span><span class="p">}</span><span class="w"> </span><span class="o">&lt;</span><span class="err">/h1&gt;;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/CountButtons.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function CountButtons({
-  increment,
-  decrement,
-  reset,
-}: {
-  increment: () =&gt; void;
-  decrement: () =&gt; void;
-  reset: () =&gt; void;
-}) {
-  return (
-    &lt;&gt;
-      &lt;button onClick={decrement}&gt;감소&lt;/button&gt;
-      &lt;button onClick={reset}&gt;초기화&lt;/button&gt;
-      &lt;button onClick={increment}&gt;증가&lt;/button&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">CountButtons</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">increment</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">decrement</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">reset</span><span class="p">,</span>
+<span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">increment</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">decrement</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">reset</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">decrement</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">감소</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">reset</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">초기화</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">increment</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">증가</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 </div>

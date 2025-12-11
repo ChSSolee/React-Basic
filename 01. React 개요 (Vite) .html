@@ -7519,7 +7519,7 @@ a.anchor-link {
 </ul>
 </li>
 </ul>
-<img alt="No description has been provided for this image" src="img/0101.png" width="600"/>
+<img alt="No description has been provided for this image" src="img/0101.png" width="400"/>
 <br/>
 <ul>
 <li><p><strong>React는 가상 DOM (Virtual DOM)을 도입</strong></p>
@@ -7532,7 +7532,7 @@ a.anchor-link {
 <p>$\rightarrow$ <strong>디핑 결과에 따라 실제 DOM에서는 변경한 부분만 최소한으로 업데이트 (재조정, Reconcilation</strong>)</p>
 </li>
 </ul>
-<img alt="No description has been provided for this image" src="img/0102.png" width="600"/>
+<img alt="No description has been provided for this image" src="img/0102.png" width="400"/>
 <br/>
 <h4 id="%EC%84%A0%EC%96%B8%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">선언적 프로그래밍<a class="anchor-link" href="#%EC%84%A0%EC%96%B8%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">¶</a></h4><ul>
 <li><strong>명령형 프로그래밍 (Imperative Programming) : UI를 만들 때, '어떻게 변경할지 (How)'를 작성</strong><ul>
@@ -7725,13 +7725,12 @@ $<span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>d
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-    return (
-        &lt;div&gt;Hello, React!&lt;/div&gt;
-    )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">React</span><span class="o">!&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li>변경사항 확인</li>
@@ -7847,17 +7846,16 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StrictMode</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createRoot</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react-dom/client'</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./App.tsx'</span>
 
-createRoot(document.getElementById('root')!).render(
-  &lt;StrictMode&gt;
-    &lt;App /&gt;
-  &lt;/StrictMode&gt;,
-)
-</code></pre>
+<span class="nx">createRoot</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'root'</span><span class="p">)</span><span class="o">!</span><span class="p">).</span><span class="nx">render</span><span class="p">(</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">App</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="err">/StrictMode&gt;,</span>
+<span class="p">)</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong>React 애플리케이션 실행 과정</strong></li>

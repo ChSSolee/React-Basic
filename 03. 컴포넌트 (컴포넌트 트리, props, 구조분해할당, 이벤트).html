@@ -7501,72 +7501,71 @@ a.anchor-link {
 <ul>
 <li><strong>이들을 각각 컴포넌트로 구현한 후, App 컴포넌트에서 모두 조합하면 웹 페이지 완성</strong></li>
 </ul>
-<pre><code class="language-jsx">jsx
-// Header
-function Header() {
-    return (
-        &lt;header&gt;
-            &lt;h1&gt;My Website&lt;/h1&gt;
-            &lt;Nav /&gt;
-        &lt;/header&gt;
-    )
-}
+<div class="highlight"><pre><span></span><span class="c1">// Header</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Header</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">header</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">My</span><span class="w"> </span><span class="nx">Website</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Nav</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/header&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
 
-// Navigation
-function Nav() {
-    return (
-        &lt;nav&gt;Home | About | Service | Contact&lt;/nav&gt;
-    );
-}
+<span class="c1">// Navigation</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Nav</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">nav</span><span class="o">&gt;</span><span class="nx">Home</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">About</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Service</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">Contact</span><span class="o">&lt;</span><span class="err">/nav&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
 
-// Article
-function Article() {
-    return (
-        &lt;article&gt;
-            &lt;h2&gt;Main Article&lt;/h2&gt;
-        &lt;/article&gt;
-    );
-}
+<span class="c1">// Article</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Article</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">article</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Main</span><span class="w"> </span><span class="nx">Article</span><span class="o">&lt;</span><span class="err">/h2&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/article&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
 
-// Section
-function Section() {
-    return (
-        &lt;section&gt;
-            &lt;h3&gt;More Details&lt;/h3&gt;
-        &lt;/section&gt;
-    );
-}
+<span class="c1">// Section</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Section</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">More</span><span class="w"> </span><span class="nx">Details</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/section&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
 
-// Aside
-function Aside() {
-    return (
-        &lt;aside&gt;
-            &lt;h3&gt;Related Links&lt;/h3&gt;
-        &lt;/aside&gt;
-    );
-}
+<span class="c1">// Aside</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Aside</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">aside</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Related</span><span class="w"> </span><span class="nx">Links</span><span class="o">&lt;</span><span class="err">/h3&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/aside&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
 
-// Footer
-function Footer() {
-    return (
-        &lt;footer&gt;
-            &lt;p&gt;All rights reserved&lt;/p&gt;
-        &lt;/footer&gt;
-    )
-}
+<span class="c1">// Footer</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">Footer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">footer</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">All</span><span class="w"> </span><span class="nx">rights</span><span class="w"> </span><span class="nx">reserved</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/footer&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
 
-// App
-function App() {
-    return (
-        &lt;div&gt;
-            &lt;Header /&gt;
-                &lt;Artivle /&gt;
-                &lt;Aside /&gt;
-            &lt;Footer /&gt;
-        &lt;/div&gt;
-    )
-}
-</code></pre>
+<span class="c1">// App</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">Artivle</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">Aside</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Footer</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%8B%A8%EC%9C%84-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AC%EC%B6%95%EC%9D%98-%EC%9E%A5%EC%A0%90">컴포넌트 단위 애플리케이션 구축의 장점<a class="anchor-link" href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%8B%A8%EC%9C%84-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B5%AC%EC%B6%95%EC%9D%98-%EC%9E%A5%EC%A0%90">¶</a></h4><ol>
 <li><p><strong>재사용 가능</strong></p>
@@ -7658,18 +7657,17 @@ function App() {
 <li><code>export</code> : 컴포넌트를 다른 파일에서 사용할 수 있도록 내보냄</li>
 </ol>
 <br/>
-<pre><code class="language-tsx">tsx
-import { Component } from "react";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 
 
-class App extends Component {
-  render() {
-    return &lt;h1&gt;Hello, Class Component!&lt;/h1&gt;
-  }
-}
+<span class="kd">class</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Component</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">render</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">Class</span><span class="w"> </span><span class="nx">Component</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
 
-export default App;
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">App</span><span class="p">;</span>
+</pre></div>
 <br/>
 <h3 id="%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">함수형 컴포넌트<a class="anchor-link" href="#%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8">¶</a></h3><ul>
 <li><p><code>function</code> 키워드로 함수를 선언한 후, <code>return</code> 문 안에 JSX를 사용해 UI구조 정의</p>
@@ -7685,15 +7683,14 @@ export default App;
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;Hello, Function Component!&lt;/h1&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nb">Function</span><span class="w"> </span><span class="nx">Component</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%82%AC%EC%9A%A9">클래스 컴포넌트와 함수형 컴포넌트 사용<a class="anchor-link" href="#%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%82%AC%EC%9A%A9">¶</a></h3><ul>
 <li><strong>React 16.8 이전에는 상태 관리나 생명주기 기능을 위해 클래스 컴포넌트가 필수</strong></li>
@@ -7729,27 +7726,25 @@ export default function App() {
 </ul>
 <br/>
 <h3 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">컴포넌트 정의<a class="anchor-link" href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">¶</a></h3><br/>
-<h4 id="%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">함수형 컴포넌트 정의<a class="anchor-link" href="#%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">¶</a></h4><pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;Hello, Function Component!&lt;/h1&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<h4 id="%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">함수형 컴포넌트 정의<a class="anchor-link" href="#%ED%95%A8%EC%88%98%ED%98%95-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%A0%95%EC%9D%98">¶</a></h4><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nb">Function</span><span class="w"> </span><span class="nx">Component</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%82%B4%EB%B3%B4%EB%82%B4%EA%B8%B0">컴포넌트 내보내기<a class="anchor-link" href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%82%B4%EB%B3%B4%EB%82%B4%EA%B8%B0">¶</a></h4><ul>
 <li><strong><code>export</code> 단독 사용 $\rightarrow$ 컴포넌트를 불러오는 쪽에서 중괄호 (<code>{}</code>)를 사용해 불러와야 함</strong></li>
 <li><strong><code>export default</code> $\rightarrow$ 중괄호 필요 없음,단 한 파일에서 하나의 기본 컴포넌트만 내보낼 수 있음</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-// export function App() {...} 사용 시
-import { App } from './App.tsx';
+<div class="highlight"><pre><span></span><span class="c1">// export function App() {...} 사용 시</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./App.tsx'</span><span class="p">;</span>
 
-// export default function App() {...} 사용 시
-import App from './App.tsx';
-</code></pre>
+<span class="c1">// export default function App() {...} 사용 시</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">App</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./App.tsx'</span><span class="p">;</span>
+</pre></div>
 <br/>
 <h3 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%B6%94%EA%B0%80">컴포넌트 추가<a class="anchor-link" href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EC%B6%94%EA%B0%80">¶</a></h3><ul>
 <li><code>src/App.tsx</code><ul>
@@ -7758,41 +7753,40 @@ import App from './App.tsx';
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-function Header() {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;header&lt;/h1&gt;
-    &lt;/&gt;
-  );
-}
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">Header</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">header</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
 
-function Main() {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;Hello, Function Component!&lt;/h1&gt;
-    &lt;/&gt;
-  );
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">Main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nb">Function</span><span class="w"> </span><span class="nx">Component</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
 
-function Footer() {
-  return (
-    &lt;&gt;
-      &lt;h1&gt;footer&lt;/h1&gt;
-    &lt;/&gt;
-  );
-}
+<span class="kd">function</span><span class="w"> </span><span class="nx">Footer</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">footer</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
 
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;Header /&gt;
-      &lt;Main /&gt;
-      &lt;Footer /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Header</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Main</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Footer</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EB%B6%84%EB%A6%AC">컴포넌트 파일 분리<a class="anchor-link" href="#%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%ED%8C%8C%EC%9D%BC-%EB%B6%84%EB%A6%AC">¶</a></h4><ul>
 <li>실무에서는 컴포넌트를 파일 단위로 분리해 관리하는 것이 일반적<ul>
@@ -7864,13 +7858,12 @@ export default function App() {
 <li>예) <code>User</code> 컴포넌트를 화면에 렌더링 하면서 <code>name</code>이라는 속성의 값을 함께 전달</li>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { User } from './Components/User';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./Components/User'</span><span class="p">;</span>
 
-export default function App() {
-    return &lt;User name='철수' age={20}/&gt;;
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s1">'철수'</span><span class="w"> </span><span class="nx">age</span><span class="o">=</span><span class="p">{</span><span class="mf">20</span><span class="p">}</span><span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><p>React에서는 부모 컴포넌트가 자식 컴포넌트에 전달한 모든 속성을 하나의 객체로 모아서 자식 컴포넌트로 전달</p>
@@ -7895,16 +7888,15 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(props: { name: string; age: number }) {
-  return (
-    &lt;&gt;
-    &lt;p&gt;name: {props.name}&lt;/p&gt;
-    &lt;p&gt;age: {props.age}&lt;/p&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="props-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85"><code>props</code> 객체 타입<a class="anchor-link" href="#props-%EA%B0%9D%EC%B2%B4-%ED%83%80%EC%9E%85">¶</a></h3><ul>
 <li><p>React는 컴포넌트로 전달할 데이터 개수에 제한이 없음</p>
@@ -7915,35 +7907,33 @@ export function User(props: { name: string; age: number }) {
 <ul>
 <li><code>src/components/User.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(props: {
-    userObj:{ 
-        name: string; age: number 
-    }
-}) {
-  return (
-    &lt;&gt;
-    &lt;p&gt;name: {props.userObj.name}&lt;/p&gt;
-    &lt;p&gt;age: {props.userObj.age}&lt;/p&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">userObj</span><span class="o">:</span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { user } from './components/User';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/User'</span><span class="p">;</span>
 
-export default function App() {
-    const userObj = {
-        name : '철수',
-        age: 20,
-    };
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'철수'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span><span class="p">,</span>
+<span class="w">    </span><span class="p">};</span>
 
-    return &lt;User userObj={userObj} /&gt;;
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">userObj</span><span class="o">=</span><span class="p">{</span><span class="nx">userObj</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">이벤트 핸들러<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">¶</a></h4><ul>
 <li>특정 버튼을 클릭했을 때 어떤 동작을 실행<ul>
@@ -7958,22 +7948,21 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { User } from './components/User';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/User'</span><span class="p">;</span>
 
-export default function App() {
-    const userObj = {
-        name : '철수',
-        age: 20,
-    };
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">'철수'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span><span class="p">,</span>
+<span class="w">    </span><span class="p">};</span>
 
-    const clickHandler = () =&gt; {
-        console.log('clicked');
-    }
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 
-    return &lt;User userObj={userObj} clickHandler={clickHandler} /&gt;;
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">userObj</span><span class="o">=</span><span class="p">{</span><span class="nx">userObj</span><span class="p">}</span><span class="w"> </span><span class="nx">clickHandler</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/User.tsx</code><ul>
@@ -7981,23 +7970,22 @@ export default function App() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(props: {
-    userObj: {
-        name: string;
-        age: number;
-    };
-    clickHandler: () =&gt; void;
-}) {
-    return (
-        &lt;&gt;
-            &lt;p&gt;name: {props.userObj.name}&lt;/p&gt;
-            &lt;p&gt;age: {props.userObj.age}&lt;/p&gt;
-            &lt;button onClick={props.clickHandler}&gt;Click Me&lt;/button&gt;
-        &lt;/&gt;
-    )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">clickHandler</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">props</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="props-%EA%B0%9D%EC%B2%B4-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9-%EB%B0%8F-%ED%83%80%EC%9E%85-%EC%A0%95%EC%9D%98"><code>props</code> 객체 구조 분해 할당 및 타입 정의<a class="anchor-link" href="#props-%EA%B0%9D%EC%B2%B4-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9-%EB%B0%8F-%ED%83%80%EC%9E%85-%EC%A0%95%EC%9D%98">¶</a></h3><br/>
 <h4 id="%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%97%90%EC%84%9C%EC%9D%98-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9">매개변수에서의 구조 분해 할당<a class="anchor-link" href="#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EC%97%90%EC%84%9C%EC%9D%98-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9">¶</a></h4><ul>
@@ -8011,25 +7999,24 @@ export function User(props: {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export funcion User( 
-    {
-         userObj : { name, age }, 
-        clickHandler 
-    }: {
-          userObj: {name: string; age:number;};
-          clickHandler: () =&gt; void
-    } 
-) {
-    return (
-        &lt;&gt;
-            &lt;p&gt;name: {userObj.name}&lt;/p&gt;
-            &lt;p&gt;age: {userObj.age}&lt;/p&gt;
-            &lt;button onClick={clickHandler}&gt;클릭&lt;/button&gt;
-        &lt;/p&gt;
-    )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="nx">funcion</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">         </span><span class="nx">userObj</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">},</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">clickHandler</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="kt">number</span><span class="p">;};</span>
+<span class="w">          </span><span class="nx">clickHandler</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">userObj</span><span class="p">.</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">클릭</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%ED%95%A8%EC%88%98-%EB%82%B4%EB%B6%80%EC%97%90%EC%84%9C%EC%9D%98-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9">함수 내부에서의 구조 분해 할당<a class="anchor-link" href="#%ED%95%A8%EC%88%98-%EB%82%B4%EB%B6%80%EC%97%90%EC%84%9C%EC%9D%98-%EA%B5%AC%EC%A1%B0-%EB%B6%84%ED%95%B4-%ED%95%A0%EB%8B%B9">¶</a></h4><ul>
 <li><code>props</code>를 그대로 받아 함수 내부에서 분해</li>
@@ -8039,25 +8026,24 @@ export funcion User(
 <ul>
 <li><code>src/components/User.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(props: {
-    userObj: { name: string; age: number; };
-    clickHandler: () =&gt; void;
-}) {
-    const {
-        userObj: { name, age },
-        clickHandler
-    } = props;
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">clickHandler</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">clickHandler</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="p">;</span>
 
-    return (
-        &lt;&gt;
-            &lt;p&gt;name: {name}&lt;/p&gt;
-            &lt;p&gt;age: {age}&lt;/p&gt;
-            &lt;button onClick={clickHandler}&gt;클릭&lt;/button&gt;
-        &lt;/&gt;
-    )
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">클릭</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%ED%83%80%EC%9E%85-%EC%A0%95%EC%9D%98">타입 정의<a class="anchor-link" href="#%ED%83%80%EC%9E%85-%EC%A0%95%EC%9D%98">¶</a></h4><ul>
 <li><p>함수 매개변수의 타입이 너무 길고 복잡하다면</p>
@@ -8068,32 +8054,30 @@ export function User(props: {
 <ul>
 <li><code>src/components/props.d.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-interface UserProps {
-    userObj: { name: string; age:number; };
-    clickHandler: () =&gt; void;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">UserProps</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="nx">age</span><span class="o">:</span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="nx">clickHandler</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/User.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(props: UserProps) {
-    const {
-        userObj: { name, age },
-        clickHandler,
-    } = props;
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="kt">UserProps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">userObj</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">clickHandler</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="p">;</span>
 
-    return (
-        &lt;&gt;
-            &lt;p&gt;name: {name}&lt;/p&gt;
-            &lt;p&gt;age: {age}&lt;/p&gt;
-            &lt;button onClick={clickHandler}&gt;클릭&lt;/button&gt;
-        &lt;/&gt;
-    );
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">클릭</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="props-%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90"><code>props</code> 전개 연산자<a class="anchor-link" href="#props-%EC%A0%84%EA%B0%9C-%EC%97%B0%EC%82%B0%EC%9E%90">¶</a></h3><ul>
 <li><code>props</code> 속성을 각각 전달하고 싶을 떄, 전개 연산자(<code>...</code>)를 사용</li>
@@ -8103,54 +8087,51 @@ export function User(props: UserProps) {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { User } from './components/User';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/User'</span><span class="p">;</span>
 
-export default function App() {
-    const userObj = {
-        name: '철수',
-        age: 20
-    };
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">userObj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">'철수'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span>
+<span class="w">    </span><span class="p">};</span>
 
-    const clickHandler = () =&gt; {
-        console.log('clicked');
-    };
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'clicked'</span><span class="p">);</span>
+<span class="w">    </span><span class="p">};</span>
 
-    return &lt;User {...userObj} clickHandler={clickHandler} /&gt;;
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="p">{...</span><span class="nx">userObj</span><span class="p">}</span><span class="w"> </span><span class="nx">clickHandler</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 <ul>
 <li><strong><code>props</code>에 <code>userObj</code>객체의 각각 속성이 개별로 전달되는 것과 동일</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-    return &lt;User name='철수' age={20} clickHandler={clickHandler} /&gt;;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s1">'철수'</span><span class="w"> </span><span class="nx">age</span><span class="o">=</span><span class="p">{</span><span class="mf">20</span><span class="p">}</span><span class="w"> </span><span class="nx">clickHandler</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="w"> </span><span class="o">/&gt;</span><span class="p">;</span>
+</pre></div>
 <br/>
 <ul>
 <li>자식 컴포넌트는 개별 속성으로 <code>props</code>를 받도록 설정 필요</li>
 <li><code>src/components/User.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-interface UserProps {
-    name: string;
-    age: number;
-    clickHandler: () =&gt; void;
-}
+<div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">UserProps</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">clickHandler</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
+<span class="p">}</span>
 
-export function User(props: UserProps) {
-    const {
-        name, age, clickHandler,
-    } = props;
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="kt">UserProps</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="p">,</span><span class="w"> </span><span class="nx">age</span><span class="p">,</span><span class="w"> </span><span class="nx">clickHandler</span><span class="p">,</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">props</span><span class="p">;</span>
 
-    return (
-        &lt;&gt;
-            &lt;p&gt;name: {name}&lt;/p&gt;
-            &lt;p&gt;age: {age}&lt;/p&gt;
-            &lt;button onClick={clickHandler}&gt;클릭&lt;/button&gt;
-        &lt;/&gt;
-    );
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">name</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">age</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">클릭</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="children">children<a class="anchor-link" href="#children">¶</a></h3><ul>
 <li><p>React에서 컴포넌트는 기본적으로 빈 태그 형태로 사용 (<code>&lt;컴포넌트 /&gt;</code>)</p>
@@ -8172,21 +8153,20 @@ export function User(props: UserProps) {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { User } from './components/User';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">User</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/User'</span><span class="p">;</span>
 
-export default function App() {
-    return (
-        &lt;&gt;
-            &lt;User title='User Component'&gt;
-                &lt;p&gt;James&lt;/p&gt;
-                &lt;p&gt;20&lt;/p&gt;
-                &lt;p&gt;male&lt;/p&gt;
-            &lt;/User&gt;
-        &lt;/&gt;
-    );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">title</span><span class="o">=</span><span class="s1">'User Component'</span><span class="o">&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">James</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="mf">20</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">                </span><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">male</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="err">/User&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><p><strong>React에서는 <code>childeren</code>이 텍스트, JSX요소, 숫자, 배열 등 다양한 형태가 될 수 있기에</strong></p>
@@ -8195,24 +8175,23 @@ export default function App() {
 <li><p><code>src/components/User.tsx</code></p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function User(
-    { 
-        title, 
-        children 
-    }: { 
-        title:string; 
-        children: React.ReactNode; 
-    }
-) {
-    return (
-        &lt;&gt;
-            &lt;h1&gt;{title}&lt;/h1&gt;
-            {children}
-        &lt;/&gt;
-    );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">User</span><span class="p">(</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">title</span><span class="p">,</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">children</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">title</span><span class="o">:</span><span class="kt">string</span><span class="p">;</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">children</span><span class="o">:</span><span class="w"> </span><span class="kt">React.ReactNode</span><span class="p">;</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">children</span><span class="p">}</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 <br/>
@@ -8238,15 +8217,14 @@ export function User(
 <p>React에서는 이벤트 속성을 카멜 케이스로 작성하고 값으로 함수를 전달</p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-    return (
-        &lt;&gt;
-            &lt;button onClick={() =&gt; {alert('Button clicked!')}}&gt;Click&lt;/button&gt;
-        &lt;/&gt;
-    )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Button clicked!'</span><span class="p">)}}</span><span class="o">&gt;</span><span class="nx">Click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="React%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%86%8D%EC%84%B1">React에서 사용하는 이벤트 속성<a class="anchor-link" href="#React%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%86%8D%EC%84%B1">¶</a></h4><ul>
 <li><a href="https://react.dev/reference/react-dom/components/common">https://react.dev/reference/react-dom/components/common</a></li>
@@ -8391,16 +8369,15 @@ export default function App() {
 <ul>
 <li>존재하지 않는 이벤트 속성 사용으로 오류가 발생 하는 경우</li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button onFive={() =&gt; {alert('five');}}&gt;click&lt;/button&gt;
-      // 존재하지 않는 이벤트 속성 사용으로 오류 발생
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onFive</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'five'</span><span class="p">);}}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="c1">// 존재하지 않는 이벤트 속성 사용으로 오류 발생</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><p>하지만 컴포넌트는 HTML 태그와 달리 직접 만든 사용자 정의 함수이기에,</p>
@@ -8411,26 +8388,24 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { Button } from './components/Button';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/Button'</span><span class="p">;</span>
 
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;Button onFive={() =&gt; alert('five')} /&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">onFive</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">'five'</span><span class="p">)}</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/Button.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export function Button({ onFive }: { onFive: () =&gt; void }) {
-  return &lt;button onClick={onFive}&gt;click&lt;/button&gt;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Button</span><span class="p">({</span><span class="w"> </span><span class="nx">onFive</span><span class="w"> </span><span class="p">}</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">onFive</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onFive</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">이벤트 핸들러<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">¶</a></h3><ul>
 <li><strong>이벤트가 발생했을 때 실행할 함수</strong></li>
@@ -8439,49 +8414,46 @@ export function Button({ onFive }: { onFive: () =&gt; void }) {
 <h4 id="%EC%9D%B8%EB%9D%BC%EC%9D%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">인라인 핸들러<a class="anchor-link" href="#%EC%9D%B8%EB%9D%BC%EC%9D%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">¶</a></h4><ul>
 <li><strong>이벤트 속성 안에 함수를 직접 작성</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button onClick={() =&gt; { alert('Button clicked!'); }}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Button clicked!'</span><span class="p">);</span><span class="w"> </span><span class="p">}}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%ED%95%A8%EC%88%98-%EC%B0%B8%EC%A1%B0">함수 참조<a class="anchor-link" href="#%ED%95%A8%EC%88%98-%EC%B0%B8%EC%A1%B0">¶</a></h4><ul>
 <li><strong>이벤트 핸들러를 컴포넌트 외부에 따로 정의</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const clickHandler = () =&gt; {
-    alert('Button clicked!');
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="s1">'Button clicked!'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;&gt;
-      &lt;button onClick={clickHandler}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC%EC%9D%98-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">이벤트 핸들러의 매개변수<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC%EC%9D%98-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">¶</a></h4><ul>
 <li><strong>React에서는 이벤트 핸들러에 매개변수를 전달할 때 인라인 핸들러 방식을 사용</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const clickHandler = (msg: string) =&gt; {
-    alert(msg)
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">msg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;&gt;
-      &lt;button onClick={() =&gt; { clickHandler('hello'); }}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">clickHandler</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">);</span><span class="w"> </span><span class="p">}}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4">이벤트 객체<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4">¶</a></h4><ul>
 <li><strong>이벤트가 발생하면 해당 이벤트 핸들러 함수가 호출되고, 이벤트 객체(Event Object)가 매개변수로 전달</strong><ul>
@@ -8494,15 +8466,14 @@ export default function App() {
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">이벤트 객체와 이벤트 핸들러<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%B8%EB%93%A4%EB%9F%AC">¶</a></h4><ul>
 <li><strong>인라인 핸들러에서는 이벤트 객체를 함수의 매개변수로 직접 받아 사용 가능</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button onClick={(e) =&gt; { console.log(e.target); }}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span><span class="w"> </span><span class="p">}}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%ED%95%A8%EC%88%98-%EC%B0%B8%EC%A1%B0">이벤트 객체와 함수 참조<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%ED%95%A8%EC%88%98-%EC%B0%B8%EC%A1%B0">¶</a></h4><ul>
 <li><strong>함수 참조 방식에서는 이벤트 핸들러에 이벤트 객체를 직접 전달하지 않아도 React가 자동으로 이벤트 객체를 해당 함수의 첫 번째 매개변수로 전달</strong></li>
@@ -8512,19 +8483,18 @@ export default function App() {
 <li><code>&lt;button&gt;</code>요소에 <code>clickHandler()</code> 함수를 참조 형태로 전달할 때, 이벤트 객체를 명시하지 않음</li>
 <li>하지만 해당 함수의 첫 번째 매개변수로 <code>e</code>를 선언해 이벤트 객체가 전달</li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const clickHandler = (e: React.MouseEvent&lt;HTMLButtonElement, MouseEvent&gt;) =&gt; {
-    console.log(e)
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="o">:</span><span class="w"> </span><span class="kt">React.MouseEvent</span><span class="o">&lt;</span><span class="nx">HTMLButtonElement</span><span class="p">,</span><span class="w"> </span><span class="nx">MouseEvent</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;&gt;
-      &lt;button onClick={clickHandler}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">clickHandler</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">이벤트 객체와 매개변수<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B0%9D%EC%B2%B4%EC%99%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98">¶</a></h4><ul>
 <li><p><strong>이벤트 핸들러에 이벤트 객체와 추가 매개변수를 모두 전달해야 하는 경우에는, 함수 참조 방식을 사용할 수 없음</strong></p>
@@ -8532,23 +8502,22 @@ export default function App() {
 </li>
 </ul>
 <br/>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const clickHandler = (
-    e: React.MouseEvent&lt;HTMLButtonElement, MouseEvent&gt;,
-    msg: string;
-  ) =&gt; {
-    console.log(e);
-    alert(msg);
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">clickHandler</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="nx">e</span><span class="o">:</span><span class="w"> </span><span class="kt">React.MouseEvent</span><span class="o">&lt;</span><span class="nx">HTMLButtonElement</span><span class="p">,</span><span class="w"> </span><span class="nx">MouseEvent</span><span class="o">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">msg</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">alert</span><span class="p">(</span><span class="nx">msg</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;&gt;
-      &lt;button onClick={(e) =&gt; clickHandler(e, 'Hello')}&gt;click&lt;/button&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">clickHandler</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="w"> </span><span class="s1">'Hello'</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">click</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%A0%84%ED%8C%8C-(Event-Propagation)">이벤트 전파 (Event Propagation)<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%A0%84%ED%8C%8C-(Event-Propagation)">¶</a></h3><ul>
 <li>이벤트가 발생했을 떄 부모 또는 자식 요소로 전달되는 현상</li>
@@ -8565,62 +8534,60 @@ export default function App() {
 <p>$\rightarrow$ <strong>이벤트는 부모에서 자식 방향으로 전파됨</strong></p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const handleCapture = () =&gt; {
-    console.log('Parent');
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleCapture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Parent'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const handleBubble = () =&gt; {
-    console.log('Child');
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleBubble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Child'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;div
-      onClickCapture={handleCapture} // onClickCapture
-      style={{ padding: '50px', backgroundColor: '#f0f0f0' }}
-    &gt;
-      Parent
-      &lt;button 
-        onClick={handleBubble} 
-        style={{ marginTop: '20px' }}
-      &gt;
-        Click Me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span>
+<span class="w">      </span><span class="nx">onClickCapture</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCapture</span><span class="p">}</span><span class="w"> </span><span class="c1">// onClickCapture</span>
+<span class="w">      </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">'50px'</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">'#f0f0f0'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">      </span><span class="nx">Parent</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleBubble</span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="s1">'20px'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EB%B2%84%EB%B8%94%EB%A7%81-(Bubbling)">버블링 (Bubbling)<a class="anchor-link" href="#%EB%B2%84%EB%B8%94%EB%A7%81-(Bubbling)">¶</a></h4><ul>
 <li><strong>이벤트가 자식 요소에서 시작해 부모요소로 전파되는 방식</strong></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const handleCapture = () =&gt; {
-    console.log('Parent');
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleCapture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Parent'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const handleBubble = () =&gt; {
-    console.log('Child');
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleBubble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Child'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;div
-      onClick={handleCapture} // onClick
-      style={{ padding: '50px', backgroundColor: '#f0f0f0' }}
-    &gt;
-      Parent
-      &lt;button 
-        onClick={handleBubble} 
-        style={{ marginTop: '20px' }}
-      &gt;
-        Click Me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span>
+<span class="w">      </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCapture</span><span class="p">}</span><span class="w"> </span><span class="c1">// onClick</span>
+<span class="w">      </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">'50px'</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">'#f0f0f0'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">      </span><span class="nx">Parent</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleBubble</span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="s1">'20px'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%A0%84%ED%8C%8C-%EB%A7%89%EA%B8%B0">이벤트 전파 막기<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EC%A0%84%ED%8C%8C-%EB%A7%89%EA%B8%B0">¶</a></h4><ul>
 <li><p>캡처링 : 이벤트 속성에 <code>Capture</code> 수식어 사용 X</p>
@@ -8630,33 +8597,32 @@ export default function App() {
 </li>
 </ul>
 <br/>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  const handleCapture = () =&gt; {
-    console.log('Parent');
-  };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleCapture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Parent'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  const handleBubble = (e: ReactMouseEvent&lt;HTMLButtonElement, MouseEvent&gt;) =&gt; {
-    e.stopPropagation();
-    console.log('Child');
-  };
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">handleBubble</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="o">:</span><span class="w"> </span><span class="kt">ReactMouseEvent</span><span class="o">&lt;</span><span class="nx">HTMLButtonElement</span><span class="p">,</span><span class="w"> </span><span class="nx">MouseEvent</span><span class="o">&gt;</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">e</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Child'</span><span class="p">);</span>
+<span class="w">  </span><span class="p">};</span>
 
-  return (
-    &lt;div
-      onClick={handleCapture} // onClick
-      style={{ padding: '50px', backgroundColor: '#f0f0f0' }}
-    &gt;
-      Parent
-      &lt;button 
-        onClick={handleBubble} 
-        style={{ marginTop: '20px' }}
-      &gt;
-        Click Me
-      &lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-</code></pre>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span>
+<span class="w">      </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleCapture</span><span class="p">}</span><span class="w"> </span><span class="c1">// onClick</span>
+<span class="w">      </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">'50px'</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">'#f0f0f0'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">      </span><span class="nx">Parent</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleBubble</span><span class="p">}</span><span class="w"> </span>
+<span class="w">        </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">marginTop</span><span class="o">:</span><span class="w"> </span><span class="s1">'20px'</span><span class="w"> </span><span class="p">}}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B8%B0%EB%B3%B8-%EB%8F%99%EC%9E%91-%EB%A7%89%EA%B8%B0">이벤트 기본 동작 막기<a class="anchor-link" href="#%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B8%B0%EB%B3%B8-%EB%8F%99%EC%9E%91-%EB%A7%89%EA%B8%B0">¶</a></h4><ul>
 <li><p><code>&lt;a&gt;</code>태그는 클릭하면 링크로 이동</p>
@@ -8678,21 +8644,20 @@ export default function App() {
 <p>$\rightarrow$ <code>onSubmit</code>의 <code>e.preventDefault()</code>가 제출될 때 자동 페이지 새로고침을 막음</p>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;form
-      onSubmit={(e) =&gt; {
-        e.preventDefault();
-      }}
-    &gt;
-      &lt;input type='text' name='email' /&gt;
-      &lt;input type='password' /&gt;
-      &lt;button type='submit'&gt;전송&lt;/button&gt;
-    &lt;/form&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">form</span>
+<span class="w">      </span><span class="nx">onSubmit</span><span class="o">=</span><span class="p">{(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="w">      </span><span class="p">}}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s1">'text'</span><span class="w"> </span><span class="nx">name</span><span class="o">=</span><span class="s1">'email'</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">input</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s1">'password'</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="kr">type</span><span class="o">=</span><span class="s1">'submit'</span><span class="o">&gt;</span><span class="nx">전송</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/form&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 </div>

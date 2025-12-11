@@ -7489,22 +7489,21 @@ a.anchor-link {
 <h3 id="%EC%9D%B8%EB%9D%BC%EC%9D%B8-%EC%8A%A4%ED%83%80%EC%9D%BC">인라인 스타일<a class="anchor-link" href="#%EC%9D%B8%EB%9D%BC%EC%9D%B8-%EC%8A%A4%ED%83%80%EC%9D%BC">¶</a></h3><ul>
 <li>JSX요소의 <code>style</code> 속성에 스타일 객체를 지정</li>
 </ul>
-<pre><code class="language-jsx">jsx
-export default function App() {
-    const styles = {
-        backgroundColor: 'blue',
-        color:'white',
-        fontSize: '16px',
-        padding: '10px'
-    };
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s1">'blue'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="s1">'white'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">fontSize</span><span class="o">:</span><span class="w"> </span><span class="s1">'16px'</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s1">'10px'</span>
+<span class="w">    </span><span class="p">};</span>
 
-    return (
-        &lt;&gt;
-            &lt;h1 style={styles}&gt;Inline Style&lt;/h1&gt;
-        &lt;/&gt;
-    )
-}
-</code></pre>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">h1</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Inline</span><span class="w"> </span><span class="nx">Style</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%8A%A4%ED%83%80%EC%9D%BC">글로벌 스타일<a class="anchor-link" href="#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%8A%A4%ED%83%80%EC%9D%BC">¶</a></h3><ul>
 <li><p><strong>css 확장자를 가진 파일에 CSS코드를 작성하고, 이를 컴포넌트에서 로드</strong></p>
@@ -7532,29 +7531,26 @@ export default function App() {
 <ul>
 <li><code>src/components/Child.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function Child() {
-    return &lt;button className='btn'&gt;Child Button&lt;/button&gt;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Child</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'btn'</span><span class="o">&gt;</span><span class="nx">Child</span><span class="w"> </span><span class="nx">Button</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import './App.css';
-import Child from './components/Child';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s1">'./App.css'</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Child</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./components/Child'</span><span class="p">;</span>
 
-export default function App() {
-    return (
-        &lt;&gt;
-            &lt;button className='btn'&gt;App Button&lt;/button&gt;
-            &lt;Child /&gt;
-        &lt;/&gt;
-    )
-}
-
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">        </span><span class="o">&lt;&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'btn'</span><span class="o">&gt;</span><span class="nx">App</span><span class="w"> </span><span class="nx">Button</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">            </span><span class="o">&lt;</span><span class="nx">Child</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">        </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="CSS-%EB%AA%A8%EB%93%88">CSS 모듈<a class="anchor-link" href="#CSS-%EB%AA%A8%EB%93%88">¶</a></h3><ul>
 <li><p><strong>CSS모듈은 파일 확장자가 <code>.module.css</code>로 끝나는 파일에 스타일을 작성한 뒤 이를 컴포넌트에서 불러와 사용하는 방식</strong></p>
@@ -7584,28 +7580,26 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import styles from "./App.module.css";
-import Child from "./components/Child";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./App.module.css"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Child</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./components/Child"</span><span class="p">;</span>
 
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button className={styles.btn}&gt;App Button&lt;/button&gt;
-      &lt;Child /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">btn</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">App</span><span class="w"> </span><span class="nx">Button</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Child</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>src/components/Child.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function Child() {
-    return &lt;button className='btn'&gt;Child Button&lt;/button&gt;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">Child</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'btn'</span><span class="o">&gt;</span><span class="nx">Child</span><span class="w"> </span><span class="nx">Button</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><code>App</code> 컴포넌트의 버튼에만 스타일이 적용되고, <code>Child</code> 컴포넌트의 버튼은 영향을 받지 않음</li>
@@ -7635,10 +7629,9 @@ export default function Child() {
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-const btnClass = classNames('btn', 'primary');
-console.log(btnClass) // btn primary
-</code></pre>
+<div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">btnClass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">classNames</span><span class="p">(</span><span class="s1">'btn'</span><span class="p">,</span><span class="w"> </span><span class="s1">'primary'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">btnClass</span><span class="p">)</span><span class="w"> </span><span class="c1">// btn primary</span>
+</pre></div>
 <br/>
 <h4 id="%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%8A%A4%ED%83%80%EC%9D%BC%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9">글로벌 스타일에서 사용<a class="anchor-link" href="#%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%8A%A4%ED%83%80%EC%9D%BC%EC%97%90%EC%84%9C-%EC%82%AC%EC%9A%A9">¶</a></h4><ul>
 <li><code>classnames</code>라이브러리는 글로벌 스타일 방식에서 매우 유용하게 활용</li>
@@ -7668,24 +7661,23 @@ console.log(btnClass) // btn primary
 </ul>
 </li>
 </ul>
-<pre><code class="language-tsx">tsx
-import styles from "./App.module.css";
-import classNames from "classnames/bind";
-import Child from "./components/Child";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./App.module.css"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">classNames</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"classnames/bind"</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="nx">Child</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./components/Child"</span><span class="p">;</span>
 
-export default function App() {
-  const isActive = true;
-  const cx = classNames.bind(styles);
-  return (
-    &lt;&gt;
-      &lt;button className={cx({ btn: true, "is-active": isActive })}&gt;
-        App Button
-      &lt;/button&gt;
-      &lt;Child /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">classNames</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">styles</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">cx</span><span class="p">({</span><span class="w"> </span><span class="nx">btn</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="s2">"is-active"</span><span class="o">:</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="p">})}</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">App</span><span class="w"> </span><span class="nx">Button</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">Child</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 <br/>
@@ -7722,41 +7714,39 @@ $\rightarrow$ 웹 애플리케이션이 더 복잡해짐에 따라 문제점 발
 <li>템플릿 리터럴 앞에 함수를 붙여 문자열을 처리할 수 있는 자바스크립트 문법</li>
 <li>함수는 템플릿 리터럴의 문자열 부분과 <code>${}</code>로 감싼 표현식을 분리된 배열 형태로 전달받아, 이를 바탕으로 원하는 방식으로 문자열을 가공할 수 있음</li>
 </ul>
-<pre><code class="language-tsx">tsx
-function tagFunction(strings, ...values) {
-  console.log(strings);
-  console.log(values);
-}
-const name ='John';
-const age = 25;
-tagFunction`Hello, my name is ${name} and I am ${age} years old.`;
+<div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">tagFunction</span><span class="p">(</span><span class="nx">strings</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="nx">values</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">strings</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="s1">'John'</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25</span><span class="p">;</span>
+<span class="nx">tagFunction</span><span class="sb">`Hello, my name is </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb"> and I am </span><span class="si">${</span><span class="nx">age</span><span class="si">}</span><span class="sb"> years old.`</span><span class="p">;</span>
 
-// 출력 결과
-// ['Hello, my name is', 'and I am', ' years old.']
-// ['John', 25]
-</code></pre>
+<span class="c1">// 출력 결과</span>
+<span class="c1">// ['Hello, my name is', 'and I am', ' years old.']</span>
+<span class="c1">// ['John', 25]</span>
+</pre></div>
 <br/>
-<h4 id="%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">기본 사용법<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">¶</a></h4><pre><code class="language-tsx">tsx
-import styled, { css } from "styled-components";
+<h4 id="%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">기본 사용법<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">¶</a></h4><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">styled</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">css</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"styled-components"</span><span class="p">;</span>
 
-const Button = styled.button&lt;{ $primary?: boolean }&gt;`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid #bf4f74;
-  color: #bf4f74;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-  ${(props) =&gt;
-    props.$primary &amp;&amp;
-    css`
-      background: #bf4f74;
-      color: white;
-    `}
-`;
-export default function App() {
-  return &lt;Button $primary&gt;Click Me&lt;/Button&gt;;
-}
-</code></pre>
+<span class="kd">const</span><span class="w"> </span><span class="nx">Button</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">styled</span><span class="p">.</span><span class="nx">button</span><span class="o">&lt;</span><span class="p">{</span><span class="w"> </span><span class="nx">$primary?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">}</span><span class="o">&gt;</span><span class="sb">`</span>
+<span class="sb">  background: transparent;</span>
+<span class="sb">  border-radius: 3px;</span>
+<span class="sb">  border: 2px solid #bf4f74;</span>
+<span class="sb">  color: #bf4f74;</span>
+<span class="sb">  margin: 0 1em;</span>
+<span class="sb">  padding: 0.25em 1em;</span>
+<span class="sb">  </span><span class="si">${</span><span class="p">(</span><span class="nx">props</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span>
+<span class="w">    </span><span class="nx">props</span><span class="p">.</span><span class="nx">$primary</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">    </span><span class="nx">css</span><span class="sb">`</span>
+<span class="sb">      background: #bf4f74;</span>
+<span class="sb">      color: white;</span>
+<span class="sb">    `</span><span class="si">}</span>
+<span class="sb">`</span><span class="p">;</span>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">Button</span><span class="w"> </span><span class="nx">$primary</span><span class="o">&gt;</span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span><span class="o">&lt;</span><span class="err">/Button&gt;;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="emotion"><code>emotion</code><a class="anchor-link" href="#emotion">¶</a></h4><ul>
 <li>널리 사용하고 유연한 CSS-in-JS 라이브러리</li>
@@ -7766,27 +7756,26 @@ export default function App() {
 <div class="highlight"><pre><span></span>$<span class="w"> </span>npm<span class="w"> </span>i<span class="w"> </span>@emotion/css
 </pre></div>
 <br/>
-<h4 id="%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">기본 사용법<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">¶</a></h4><pre><code class="language-tsx">tsx
-import { css } from "@emotion/css";
+<h4 id="%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">기본 사용법<a class="anchor-link" href="#%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95">¶</a></h4><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">css</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@emotion/css"</span><span class="p">;</span>
 
-export default function App() {
-  const isActive = false;
-  return (
-    &lt;button
-      className={css`
-        background: ${isActive ? "#bf4f74" : "transparent"};
-        border-radius: 3px;
-        border: 2px solid #bf4f74;
-        color: ${isActive ? "white" : "#bf4f74"};
-        margin: 0 1em;
-        padding: 0.25em 1em;
-      `}
-    &gt;
-      Click Me
-    &lt;/button&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">button</span>
+<span class="w">      </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">css</span><span class="sb">`</span>
+<span class="sb">        background: </span><span class="si">${</span><span class="nx">isActive</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"#bf4f74"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"transparent"</span><span class="si">}</span><span class="sb">;</span>
+<span class="sb">        border-radius: 3px;</span>
+<span class="sb">        border: 2px solid #bf4f74;</span>
+<span class="sb">        color: </span><span class="si">${</span><span class="nx">isActive</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"white"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"#bf4f74"</span><span class="si">}</span><span class="sb">;</span>
+<span class="sb">        margin: 0 1em;</span>
+<span class="sb">        padding: 0.25em 1em;</span>
+<span class="sb">      `</span><span class="p">}</span>
+<span class="w">    </span><span class="o">&gt;</span>
+<span class="w">      </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="vanilla-exract"><code>vanilla-exract</code><a class="anchor-link" href="#vanilla-exract">¶</a></h3><ul>
 <li><strong>제로 런타임 : 애플리케이션이 실행 될 때, 스타일을 생성하거나 적용하는 데 추가 비용이 발생하지 않음</strong><ul>
@@ -7845,18 +7834,17 @@ $<span class="w"> </span>npm<span class="w"> </span>install<span class="w"> </sp
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { container, button, active } from "./App.css.ts";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">container</span><span class="p">,</span><span class="w"> </span><span class="nx">button</span><span class="p">,</span><span class="w"> </span><span class="nx">active</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./App.css.ts"</span><span class="p">;</span>
 
-export default function App() {
-  const isActive = false;
-  return (
-    &lt;div className={container}&gt;
-      &lt;button className={`${button} ${isActive &amp;&amp; active}`}&gt;Click me&lt;/button&gt;
-    &lt;/div&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isActive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">container</span><span class="p">}</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="sb">`</span><span class="si">${</span><span class="nx">button</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="nx">isActive</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">active</span><span class="si">}</span><span class="sb">`</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span><span class="w"> </span><span class="nx">me</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 <br/>
@@ -7900,27 +7888,25 @@ export default function App() {
 <ul>
 <li>생성한 <code>index.css</code> 파일을 <code>main.tsx</code>에서 import</li>
 </ul>
-<pre><code class="language-tsx">tsx
-import './index.css'; 
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="s1">'./index.css'</span><span class="p">;</span>
+</pre></div>
 <br/>
 <h4 id="%EC%82%AC%EC%9A%A9">사용<a class="anchor-link" href="#%EC%82%AC%EC%9A%A9">¶</a></h4><ul>
 <li>Tailwind CSS는 유틸리티 클래스를 HTML요소에 직접 적용하여 설정하는 방식</li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button
-        className="bg-transparent rounded-[3px] border-2 border-[#bf4f74] 
-                        text-[#bf4f74] m-[0.1em] py-[0.25em] px-[1em]"
-      &gt;
-        Click Me
-      &lt;/button&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span>
+<span class="w">        </span><span class="nx">className</span><span class="o">=</span><span class="s2">"bg-transparent rounded-[3px] border-2 border-[#bf4f74] </span>
+<span class="s2">                        text-[#bf4f74] m-[0.1em] py-[0.25em] px-[1em]"</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <h4 id="CSS-%EC%86%8D%EC%84%B1">CSS 속성<a class="anchor-link" href="#CSS-%EC%86%8D%EC%84%B1">¶</a></h4><ul>
 <li><a href="https://tailwindcss.com/docs/installation/using-vite">https://tailwindcss.com/docs/installation/using-vite</a></li>
 </ul>
@@ -7980,24 +7966,23 @@ export default function App() {
 <ul>
 <li><strong><code>twMerge()</code></strong> : 여러 Tailwind CSS 클래스를 결합할 때 중복되거나 충돌되는 클래스가 있으면 마지막 클래스를 우선시해 중복을 제거</li>
 </ul>
-<pre><code class="language-tsx">tsx
-import { twMerge } from "tailwind-merge";
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">twMerge</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"tailwind-merge"</span><span class="p">;</span>
 
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;button
-        className={twMerge(
-          "bg-transparent text-[#bf4f74] rounded-[3px] border-2 border-[#bf4f74] m-[0.1em] py-[0.25em] px-[1em]",
-          "bg-rose-500 text-white"
-        )}
-      &gt;
-        Click Me
-      &lt;/button&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span>
+<span class="w">        </span><span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">twMerge</span><span class="p">(</span>
+<span class="w">          </span><span class="s2">"bg-transparent text-[#bf4f74] rounded-[3px] border-2 border-[#bf4f74] m-[0.1em] py-[0.25em] px-[1em]"</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">"bg-rose-500 text-white"</span>
+<span class="w">        </span><span class="p">)}</span>
+<span class="w">      </span><span class="o">&gt;</span>
+<span class="w">        </span><span class="nx">Click</span><span class="w"> </span><span class="nx">Me</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong><code>twJoin()</code></strong> : 여러 클래스를 단순히 문자열로 연결하며, 중복되거나 충돌되는 클래스도 그대로 유지</li>
@@ -8035,15 +8020,14 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;img src='/assets/images/ocean.jpg' alt='ocean' /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s1">'/assets/images/ocean.jpg'</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="s1">'ocean'</span><span class="w"> </span><span class="o">/&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="CSS-%EC%86%8D%EC%84%B1-%EB%A0%8C%EB%8D%94%EB%A7%81">CSS 속성 렌더링<a class="anchor-link" href="#CSS-%EC%86%8D%EC%84%B1-%EB%A0%8C%EB%8D%94%EB%A7%81">¶</a></h4><ul>
 <li><code>index.css</code></li>
@@ -8058,15 +8042,14 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;div className="bg"&gt;&lt;/div&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">"bg"</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="src-%ED%8F%B4%EB%8D%94"><code>src</code> 폴더<a class="anchor-link" href="#src-%ED%8F%B4%EB%8D%94">¶</a></h3><ul>
 <li><strong><code>src</code>는 소스 코드가 있는 위치</strong></li>
@@ -8082,17 +8065,16 @@ export default function App() {
 <h4 id="img%ED%83%9C%EA%B7%B8-%EB%A0%8C%EB%8D%94%EB%A7%81"><code>img</code>태그 렌더링<a class="anchor-link" href="#img%ED%83%9C%EA%B7%B8-%EB%A0%8C%EB%8D%94%EB%A7%81">¶</a></h4><ul>
 <li>파일 <code>import</code> 필요</li>
 </ul>
-<pre><code class="language-tsx">tsx
-import ocean from './assets/images/ocean.jpg';
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="nx">ocean</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'./assets/images/ocean.jpg'</span><span class="p">;</span>
 
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;img src={ocean} alt='ocean'&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">ocean</span><span class="p">}</span><span class="w"> </span><span class="nx">alt</span><span class="o">=</span><span class="s1">'ocean'</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h4 id="CSS-%EC%86%8D%EC%84%B1-%EB%A0%8C%EB%8D%94%EB%A7%81">CSS 속성 렌더링<a class="anchor-link" href="#CSS-%EC%86%8D%EC%84%B1-%EB%A0%8C%EB%8D%94%EB%A7%81">¶</a></h4><ul>
 <li><code>src/css/index/css</code></li>
@@ -8107,15 +8089,14 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return (
-    &lt;&gt;
-      &lt;div className='bg'&gt;&lt;/div&gt;
-    &lt;/&gt;
-  )
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'bg'</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/&gt;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <hr/>
 <br/>
@@ -8154,11 +8135,10 @@ export default function App() {
 <ul>
 <li><code>App</code> 컴포넌트의 JSX 요소에서 클래스 지정</li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-    return &lt;h1 className='nanum-pen-script-regular'&gt;나눔 펜 스크립트&lt;/h1&gt;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'nanum-pen-script-regular'</span><span class="o">&gt;</span><span class="nx">나눔</span><span class="w"> </span><span class="nx">펜</span><span class="w"> </span><span class="nx">스크립트</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="p">}</span>
+</pre></div>
 <br/>
 <h3 id="@font-face"><code>@font-face</code><a class="anchor-link" href="#@font-face">¶</a></h3><ul>
 <li><strong><code>@font-face</code>는 웹 페이지에서 서버에 있는 폰트 파일을 직접 불러와 사용하는 CSS 규칙</strong><ul>
@@ -8191,11 +8171,10 @@ export default function App() {
 <ul>
 <li><code>App.tsx</code></li>
 </ul>
-<pre><code class="language-tsx">tsx
-export default function App() {
-  return &lt;h1 className='SF_HambakSnow'&gt;폰트&lt;/h1&gt;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s1">'SF_HambakSnow'</span><span class="o">&gt;</span><span class="nx">폰트</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 </div>

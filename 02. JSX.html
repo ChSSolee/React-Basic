@@ -7496,11 +7496,10 @@ a.anchor-link {
 </ul>
 </li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;div&gt;
-    &lt;h1&gt;Hello, React!&lt;/h1&gt;
-&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span><span class="p">,</span><span class="w"> </span><span class="nx">React</span><span class="o">!&lt;</span><span class="err">/h1&gt;</span>
+<span class="o">&lt;</span><span class="err">/div&gt;</span>
+</pre></div>
 <br/>
 <h2 id="02.-JSX-%EB%AC%B8%EB%B2%95">02. JSX 문법<a class="anchor-link" href="#02.-JSX-%EB%AC%B8%EB%B2%95">¶</a></h2><br/>
 <h3 id="%ED%95%98%EB%82%98%EC%9D%98-%EB%A3%A8%ED%8A%B8-%EC%9A%94%EC%86%8C%EB%A1%9C-%EB%B0%98%ED%99%98">하나의 루트 요소로 반환<a class="anchor-link" href="#%ED%95%98%EB%82%98%EC%9D%98-%EB%A3%A8%ED%8A%B8-%EC%9A%94%EC%86%8C%EB%A1%9C-%EB%B0%98%ED%99%98">¶</a></h3><ul>
@@ -7510,13 +7509,12 @@ a.anchor-link {
 </ul>
 </li>
 </ul>
-<pre><code class="language-jsx">jsx
-// &lt;React.Fragment&gt; 혹은 &lt;&gt;
-&lt;React.Fragment&gt; 
-    &lt;div&gt;첫 번째 영역&lt;/div&gt;
-    &lt;div&gt;두 번째 영역&lt;/div&gt;
-&lt;/React.Fragment&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="c1">// &lt;React.Fragment&gt; 혹은 &lt;&gt;</span>
+<span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">Fragment</span><span class="o">&gt;</span><span class="w"> </span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">첫</span><span class="w"> </span><span class="nx">번째</span><span class="w"> </span><span class="nx">영역</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">두</span><span class="w"> </span><span class="nx">번째</span><span class="w"> </span><span class="nx">영역</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="o">&lt;</span><span class="err">/React.Fragment&gt;</span>
+</pre></div>
 <br/>
 <h3 id="%EB%AA%A8%EB%93%A0-%ED%83%9C%EA%B7%B8-%EB%8B%AB%EA%B8%B0">모든 태그 닫기<a class="anchor-link" href="#%EB%AA%A8%EB%93%A0-%ED%83%9C%EA%B7%B8-%EB%8B%AB%EA%B8%B0">¶</a></h3><ul>
 <li>HTML에서는 일부 태그를 닫지 않아도 작동 (self-closing tag)<ul>
@@ -7525,10 +7523,9 @@ a.anchor-link {
 </li>
 <li><strong>JSX에서는 빈 태그라도 자체 종료 태그를 사용해야 함</strong></li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;br&gt;
-&lt;br /&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">br</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">br</span><span class="w"> </span><span class="o">/&gt;</span>
+</pre></div>
 <ul>
 <li><strong>JSX 변환 도구 : <a href="https://transform.tools/html-to-jsx">https://transform.tools/html-to-jsx</a></strong></li>
 </ul>
@@ -7547,9 +7544,8 @@ a.anchor-link {
 <ul>
 <li>JSX</li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;div className="box"&gt;&lt;/div&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">"box"</span><span class="o">&gt;&lt;</span><span class="err">/div&gt;</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong>HTML과 JSX에서 서로 이름이 다른 속성</strong><ul>
@@ -7635,26 +7631,23 @@ a.anchor-link {
 <h3 id="%ED%91%9C%ED%98%84%EC%8B%9D-%EC%A4%91%EA%B4%84%ED%98%B8-%EC%82%AC%EC%9A%A9">표현식 중괄호 사용<a class="anchor-link" href="#%ED%91%9C%ED%98%84%EC%8B%9D-%EC%A4%91%EA%B4%84%ED%98%B8-%EC%82%AC%EC%9A%A9">¶</a></h3><ul>
 <li><strong>JSX에는 중괄호 (<code>{}</code>) 안에 JS 표현식을 넣어 사용 가능 $\rightarrow$ 화면에 표시할 내용을 동적으로 개발 가능</strong></li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;h1&gt;result: {10 + 20}&lt;/h1&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">result</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="mf">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">20</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</pre></div>
 <br/>
 <ul>
 <li>JSX안에서 삼항 연산 사용 가능</li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;h1&gt;{10 &lt;ㅗ 20 ? "10이 더 작다" : "20이 더 크다"}&lt;/h1&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="mf">10</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">ㅗ</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"10이 더 작다"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"20이 더 크다"</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</pre></div>
 <br/>
 <ul>
 <li><strong>논리 연산자 (&amp;&amp;) 사용할 때, 조건이 참일 때만 JSX 요소를 출력</strong></li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;&gt;
-  {10 &gt; 20 &amp;&amp; &lt;h1&gt; 10이 20보다 더 크다&lt;/h1&gt;}
-  {10 &lt; 20 &amp;&amp; &lt;h1&gt; 10이 20보다 더 작다&lt;/h1&gt;}
-&lt;/h1&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;&gt;</span>
+<span class="w">  </span><span class="p">{</span><span class="mf">10</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="nx">이</span><span class="w"> </span><span class="mf">20</span><span class="nx">보다</span><span class="w"> </span><span class="nx">더</span><span class="w"> </span><span class="nx">크다</span><span class="o">&lt;</span><span class="err">/h1&gt;}</span>
+<span class="w">  </span><span class="p">{</span><span class="mf">10</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="nx">이</span><span class="w"> </span><span class="mf">20</span><span class="nx">보다</span><span class="w"> </span><span class="nx">더</span><span class="w"> </span><span class="nx">작다</span><span class="o">&lt;</span><span class="err">/h1&gt;}</span>
+<span class="o">&lt;</span><span class="err">/&gt;</span>
+</pre></div>
 <br/>
 <h3 id="%EC%9D%B8%EB%9D%BC%EC%9D%B8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EA%B0%9D%EC%B2%B4-%EC%A7%80%EC%A0%95">인라인 스타일 객체 지정<a class="anchor-link" href="#%EC%9D%B8%EB%9D%BC%EC%9D%B8-%EC%8A%A4%ED%83%80%EC%9D%BC-%EA%B0%9D%EC%B2%B4-%EC%A7%80%EC%A0%95">¶</a></h3><ul>
 <li>HTML에서는 태그에 직접 <code>style</code> 속성을 지정 $\rightarrow$ 인라인 스타일</li>
@@ -7667,22 +7660,20 @@ a.anchor-link {
 <p><strong>CSS 속성은 반드시 카멜 케이스로 작성 ('-' 포함시 카멜케이스로)</strong></p>
 </li>
 </ul>
-<pre><code class="language-jsx">jsx
-&lt;h1
-  style={{
-    color: "red",
-    backgroundColor: "lightgray",
-  }}
-&gt;Styled Text
-&lt;/h1&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">h1</span>
+<span class="w">  </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">    </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">"red"</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="s2">"lightgray"</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}}</span>
+<span class="o">&gt;</span><span class="nx">Styled</span><span class="w"> </span><span class="nx">Text</span>
+<span class="o">&lt;</span><span class="err">/h1&gt;</span>
+</pre></div>
 <br/>
-<h3 id="%EC%A4%91%EA%B4%84%ED%98%B8-%EB%82%B4%EB%B6%80-%EC%A3%BC%EC%84%9D">중괄호 내부 주석<a class="anchor-link" href="#%EC%A4%91%EA%B4%84%ED%98%B8-%EB%82%B4%EB%B6%80-%EC%A3%BC%EC%84%9D">¶</a></h3><pre><code class="language-jsx">jsx
-&lt;&gt;
-  {/* 주석 */}
-  &lt;div&gt;주석&lt;/div&gt;
-&lt;/&gt;
-</code></pre>
+<h3 id="%EC%A4%91%EA%B4%84%ED%98%B8-%EB%82%B4%EB%B6%80-%EC%A3%BC%EC%84%9D">중괄호 내부 주석<a class="anchor-link" href="#%EC%A4%91%EA%B4%84%ED%98%B8-%EB%82%B4%EB%B6%80-%EC%A3%BC%EC%84%9D">¶</a></h3><div class="highlight"><pre><span></span><span class="o">&lt;&gt;</span>
+<span class="w">  </span><span class="p">{</span><span class="cm">/* 주석 */</span><span class="p">}</span>
+<span class="w">  </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="nx">주석</span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="o">&lt;</span><span class="err">/&gt;</span>
+</pre></div>
 <br/>
 <hr/>
 </div>
