@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Decimal from "decimal.js";
 
 interface CalculatorState {
   currentNumber: string;
@@ -51,16 +52,16 @@ export default function App() {
 
       switch (state.operation) { // 이전에 클릭한 연산 기호에 맞게 연산
         case '+':
-          result = prev + current;
+          result = new Decimal(prev).plus(current).toNumber();
           break;
         case '-':
-          result = prev - current;
+          result = new Decimal(prev).minus(current).toNumber();
           break;
         case '*':
-          result = prev * current;
+          result = new Decimal(prev).times(current).toNumber();
           break;
         case '/':
-          result = prev / current;
+          result = new Decimal(prev).dividedBy(current).toNumber();
           break;
       }
 
