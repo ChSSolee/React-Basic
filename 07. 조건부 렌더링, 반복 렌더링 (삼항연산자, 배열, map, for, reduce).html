@@ -7857,6 +7857,67 @@ a.anchor-link {
 <br/>
 <hr/>
 <br/>
+<h2 id="%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%98-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EB%AA%A9%EB%A1%9D%EC%9D%84-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%98%88%EC%A0%9C">사용자의 조건에 따라 목록을 렌더링 예제<a class="anchor-link" href="#%EC%82%AC%EC%9A%A9%EC%9E%90%EC%9D%98-%EC%A1%B0%EA%B1%B4%EC%97%90-%EB%94%B0%EB%9D%BC-%EB%AA%A9%EB%A1%9D%EC%9D%84-%EB%A0%8C%EB%8D%94%EB%A7%81-%EC%98%88%EC%A0%9C">¶</a></h2><ul>
+<li><code>App.tsx</code></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">App</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Alice"</span><span class="p">,</span><span class="w"> </span><span class="nx">isActive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"Admin"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Bob"</span><span class="p">,</span><span class="w"> </span><span class="nx">isActive</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"User"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Charlie"</span><span class="p">,</span><span class="w"> </span><span class="nx">isActive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"User"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"David"</span><span class="p">,</span><span class="w"> </span><span class="nx">isActive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"Guest"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s2">"Eve"</span><span class="p">,</span><span class="w"> </span><span class="nx">isActive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s2">"Admin"</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">];</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">selectedRole</span><span class="p">,</span><span class="w"> </span><span class="nx">setSelectedRole</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="s2">"All"</span><span class="p">);</span>
+
+<span class="w">  </span><span class="c1">// 필터링된 사용자 목록 생성</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">filteredUsers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">users</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">user</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">selectedRole</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"All"</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="c1">// 모든 사용자</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="nx">selectedRole</span><span class="p">;</span><span class="w"> </span><span class="c1">// 선택된 역할만</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">User</span><span class="w"> </span><span class="nx">List</span><span class="o">&lt;</span><span class="err">/h1&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="cm">/* 역할 필터 버튼 */</span><span class="p">}</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setSelectedRole</span><span class="p">(</span><span class="s2">"All"</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">All</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setSelectedRole</span><span class="p">(</span><span class="s2">"Admin"</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Admin</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setSelectedRole</span><span class="p">(</span><span class="s2">"User"</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">User</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">button</span><span class="w"> </span><span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setSelectedRole</span><span class="p">(</span><span class="s2">"Guest"</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Guest</span><span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+<span class="w">      </span><span class="p">{</span><span class="cm">/* 사용자 목록 렌더링 */</span><span class="p">}</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+<span class="w">        </span><span class="p">{</span><span class="nx">filteredUsers</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">user</span><span class="p">,</span><span class="w"> </span><span class="nx">index</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="nx">li</span>
+<span class="w">            </span><span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">index</span><span class="p">}</span>
+<span class="w">            </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span>
+<span class="w">              </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="kt">user.isActive</span>
+<span class="w">                </span><span class="o">?</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"Admin"</span>
+<span class="w">                  </span><span class="o">?</span><span class="w"> </span><span class="s2">"red"</span>
+<span class="w">                  </span><span class="o">:</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">role</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s2">"User"</span>
+<span class="w">                  </span><span class="o">?</span><span class="w"> </span><span class="s2">"blue"</span>
+<span class="w">                  </span><span class="o">:</span><span class="w"> </span><span class="s2">"yellow"</span>
+<span class="w">                </span><span class="o">:</span><span class="w"> </span><span class="s2">"gray"</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="kt">user.isActive</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s2">"white"</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">"black"</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">padding</span><span class="o">:</span><span class="w"> </span><span class="s2">"10px"</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">margin</span><span class="o">:</span><span class="w"> </span><span class="s2">"5px 0"</span><span class="p">,</span>
+<span class="w">              </span><span class="nx">borderRadius</span><span class="o">:</span><span class="w"> </span><span class="s2">"5px"</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}}</span>
+<span class="w">          </span><span class="o">&gt;</span>
+<span class="w">            </span><span class="p">{</span><span class="nx">user</span><span class="p">.</span><span class="nx">isActive</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">user</span><span class="p">.</span><span class="nx">name</span><span class="si">}</span><span class="sb"> (Inactive)`</span><span class="p">}</span>
+<span class="w">          </span><span class="o">&lt;</span><span class="err">/li&gt;</span>
+<span class="w">        </span><span class="p">))}</span>
+<span class="w">      </span><span class="o">&lt;</span><span class="err">/ul&gt;</span>
+<span class="w">    </span><span class="o">&lt;</span><span class="err">/div&gt;</span>
+<span class="w">  </span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<br/>
+<hr/>
 </div>
 </div>
 </div>
