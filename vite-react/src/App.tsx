@@ -1,5 +1,5 @@
-import ValidationFormEx2 from "./components/ValidationFormEx2";
+import Login from "./components/Login";
 
 export default function App() {
-  return <ValidationFormEx2 />;
+  return <Login />;
 }

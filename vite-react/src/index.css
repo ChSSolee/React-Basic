@@ -1,18 +1,17 @@
-/* @import "tailwindcss"; */
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+@import "tailwindcss";
 
-@font-face {
-  font-family: "SF_HambakSnow";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff")
-    format("woff");
-  font-weight: normal;
+@utility font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
 }
 
-.SF_HambakSnow {
-  font-family: "SF_HambakSnow", sans-serif;
-}
+@layer components {
+  .item-middle {
+    @apply flex items-center justify-center min-h-screen;
+  }
 
-.nanum-pen-script-regular {
-  font-family: "Nanum Pen Script", cursive;
+  .input-style1 {
+    @apply w-full h-11 rounded-lg font-inter text-sm px-4 border border-[#4F4F4F]  placeholder:text-[#acacac];
+  }
 }
