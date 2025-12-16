@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import TodoHeader from './components/TodoHeader';
 import TodoEditor from './components/TodoEditor';
@@ -8,7 +8,7 @@ import TodoList from './components/TodoList';
 
 export default function App() {
 
-  const [todos, setTodos] = useState<Todo[]>([]); // todos 상태 정의
+  const [todos, setTodos] = useState<Todo[]>(() => JSON.parse(localStorage.getItem('todos') || '[]')); // todos 상태 정의
 
   // 할 일 추가 함수
   const addTodo = (title:string) => {
@@ -46,6 +46,10 @@ export default function App() {
       )
     )
   }
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <>

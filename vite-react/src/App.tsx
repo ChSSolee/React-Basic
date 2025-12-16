@@ -1,10 +1,17 @@
-import { useState } from "react";
-import WebSocketTest from "./components/WebSocketTest";
+import { useState, useCallback } from "react";
+import A from "./components/A";
 
 export default function App() {
+  console.log('App render');
+  const [count, setCount] = useState(0);
+
+  // useCallback 적용
+  const increment = useCallback(() => setCount((count) => count + 1), []);
+  
   return (
     <>
-      <WebSocketTest />
+      <h1>App Count: {count}</h1>
+      <A increment={increment} />
     </>
   )
 }
