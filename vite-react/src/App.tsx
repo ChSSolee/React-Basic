@@ -1,17 +1,19 @@
-import { useState, useCallback } from "react";
-import A from "./components/A";
+import { useState, useTransition } from "react";
+import SlowList from "./components/SlowList";
 
 export default function App() {
-  console.log('App render');
-  const [count, setCount] = useState(0);
-
-  // useCallback 적용
-  const increment = useCallback(() => setCount((count) => count + 1), []);
-  
+  const [query, setQuery] = useState("");
+  const [defferedValue, setDeferredValue] = useState("");
+  const [isPending, startTransition] = useTransition();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newQuery = e.target.value;
+    setQuery(newQuery);
+    startTransition(() => setDeferredValue(newQuery));
+  };
   return (
-    <>
-      <h1>App Count: {count}</h1>
-      <A increment={increment} />
-    </>
-  )
+    <div>
+      <input type="text" value={query} onChange={handleChange} />
+      {isPending ? <div>Loading</div> : <SlowList query={defferedValue} />}
+    </div>
+  );
 }

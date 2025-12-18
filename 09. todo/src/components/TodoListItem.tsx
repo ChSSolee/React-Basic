@@ -1,5 +1,4 @@
-import { useState } from "react";
-
+import { useState, memo } from "react";
 import Input from "./html/Input";
 import Checkbox from "./html/Checkbox";
 import Button from "./html/Button";
@@ -7,7 +6,7 @@ import Button from "./html/Button";
 import SvgPencil from "./svg/SvgPencil";
 import SvgClose from "./SvgClose";
 
-export default function TodoListItem({
+export default memo(function TodoListItem({
     todo,
     toggleTodo,
     deleteTodo,
@@ -33,6 +32,7 @@ export default function TodoListItem({
         }
     }
 
+    console.log('TodoListItem rendering');
     return (
         <li className={`todo__item ${todo.done && 'todo__item--complete'}`}>
             {/* 수정모드가 아닐 때 */}
@@ -72,4 +72,4 @@ export default function TodoListItem({
             </div>
         </li>
     )
-}
+});

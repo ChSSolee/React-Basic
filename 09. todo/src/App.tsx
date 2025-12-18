@@ -1,6 +1,6 @@
 import './App.css';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import TodoHeader from './components/TodoHeader';
 import TodoEditor from './components/TodoEditor';
@@ -23,29 +23,29 @@ export default function App() {
     ])
   };
 
-  const toggleTodo = (id:number) => {
+  const toggleTodo = useCallback((id:number) => {
     setTodos(
       (todos) => todos.map(
         (todo) => todo.id === id ? { ...todo, done: !todo.done } : todo
       )
     );
-  }
+  }, []);
 
-  const deleteTodo = (id: number) => {
+  const deleteTodo = useCallback((id: number) => {
     setTodos(
         (todos) => todos.filter(
             (todo) => todo.id !== id
         )
     );
-  };
+  }, []);
 
-  const modifyTodo = (id: number, title: string) => {
+  const modifyTodo = useCallback((id: number, title: string) => {
     setTodos(
       (todos) => todos.map(
         (todo) => (todo.id === id ? {...todo, title } : todo)
       )
     )
-  }
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
