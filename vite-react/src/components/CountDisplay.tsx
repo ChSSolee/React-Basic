@@ -1,7 +1,6 @@
-import { useSelector } from "react-redux";
-import { type RootState } from "../store/store";
+import { useCounterStore } from "../store/counterStore";
 
 export default function CountDisplay() {
-  const count = useSelector((state: RootState) => state.counter.value);
+  const count = useCounterStore((state) => state.count);
   return <h1>Count: {count}</h1>;
 }
