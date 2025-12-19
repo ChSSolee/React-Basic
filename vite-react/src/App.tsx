@@ -1,19 +1,21 @@
-import { useState, useTransition } from "react";
-import SlowList from "./components/SlowList";
+import Auth from "./components/Auth";
+import Count from "./components/Count";
+import CountOutsideDisplay from "./components/CountOutsideDisplay";
+
+import AuthProvider from "./providers/AuthProvider";
+import CountProvider from "./providers/CountProvider";
 
 export default function App() {
-  const [query, setQuery] = useState("");
-  const [defferedValue, setDeferredValue] = useState("");
-  const [isPending, startTransition] = useTransition();
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newQuery = e.target.value;
-    setQuery(newQuery);
-    startTransition(() => setDeferredValue(newQuery));
-  };
+  console.log("App rendering");
   return (
-    <div>
-      <input type="text" value={query} onChange={handleChange} />
-      {isPending ? <div>Loading</div> : <SlowList query={defferedValue} />}
-    </div>
+    <>
+      <AuthProvider>
+        <CountProvider>
+          <Count />
+          <CountOutsideDisplay />
+          <Auth />
+        </CountProvider>
+      </AuthProvider>
+    </>
   );
 }
