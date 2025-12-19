@@ -1,8 +1,8 @@
-type Inputprops = Omit<React.ComponentPropsWithRef<'input'>, 'type'>  & {
-     type?: 'text';
+type Inputprops = Omit<React.ComponentPropsWithRef<"input">, "type"> & {
+  type?: "text";
 };
 
 export default function Input(props: Inputprops) {
-    const { ...rest } = props;
-    return <input {...rest}/>;
+  const { ...rest } = props;
+  return <input {...rest} />;
 }
