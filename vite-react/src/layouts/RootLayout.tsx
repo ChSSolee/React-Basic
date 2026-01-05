@@ -10,7 +10,7 @@ export default function RootLayout() {
             <Outlet />
         </main>
         <footer>
-            <p>© 2024 My Application</p>
+            <p>© 2025 My Application</p>
         </footer>
     </>
   );
